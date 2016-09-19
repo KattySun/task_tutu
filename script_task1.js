@@ -7,18 +7,15 @@
 
 	function dscount(str, a, b) {
 		var count = 0,
-			a = a.toUpperCase(),
-			b = b.toUpperCase(),
-			str = str.toUpperCase(),
-			pos = str.indexOf(a),
-			posB = 0
+			pos = str.toUpperCase().indexOf(a.toUpperCase())
 		while ( pos != -1 ) {
-			posB = str.indexOf(b,pos+1);
 			
-			if (pos+1 == posB)
+			pos += 1;
+			
+			if (pos == str.toUpperCase().indexOf(b.toUpperCase(), pos))
 				count++;
-			
-			pos = str.indexOf(a,pos+1);
+
+			pos = str.toUpperCase().indexOf(a.toUpperCase(), pos);
 		}
 		return count;
 	}
